@@ -202,9 +202,6 @@ span.linking_word{
 	display: none !important;
 }
 
-.time-start::after{
-content: " -";
-}
 
 i.dashicons-before{
 	float: right;
@@ -232,7 +229,7 @@ a.ics {
 	margin-top: -1em;
 }
 
-time.date-end:before {
+span.time-end:before, time.date-end:before {
 content: "- ";
 }
 
