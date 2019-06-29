@@ -232,6 +232,10 @@ a.ics {
 	margin-top: -1em;
 }
 
+time.date-end:before {
+content: "- ";
+}
+
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
