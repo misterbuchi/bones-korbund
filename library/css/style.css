@@ -1061,8 +1061,13 @@ label[for="nav-trigger"] {
 }
 
 .cardtext {
-		padding: 5px !important;
+		padding: 3.5% !important;
 	}
+.art-box {
+	padding: 3.5%;
+	padding-bottom: 96%;
+}	
+	
 }
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
