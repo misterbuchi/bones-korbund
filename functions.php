@@ -273,6 +273,28 @@ function bones_fonts() {
   wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
 }
 
+function wpse_83137_relative( $html, $post_id) {
+
+      // get thumb src
+      $post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
+      $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+      $urly = wp_get_attachment_image_src($post_thumbnail_id );
+
+      //parse the url
+      $parse_it = $urly[0];
+      $parsed_url = parse_url($parse_it, PHP_URL_PATH);
+
+      //add other stuff
+      $some_thing = 'something else you want to add';
+
+      //output relative link, add more stuff here if you want for inside html tags
+      $img = '<img src="' . $parsed_url . '">';
+
+      return $img . $some_thing;
+    }
+
+    add_filter( 'post_thumbnail_html', 'wpse_83137_relative', 10, 3 );
+
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
